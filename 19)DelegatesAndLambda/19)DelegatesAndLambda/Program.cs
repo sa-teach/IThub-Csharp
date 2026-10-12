@@ -1,10 +1,10 @@
 ﻿namespace _2_MessagesProcessing
 {
     internal class Program
-    {
-        const int minLength = 3; // для поиска слов не короче трёх символов
+    {        
         static void Main(string[] args)
         {
+            const int minLength = 3; // для поиска слов не короче трёх символов
             List<string> history = new List<string>();
 
             Console.WriteLine("Для начала нужно заполнить список.");
