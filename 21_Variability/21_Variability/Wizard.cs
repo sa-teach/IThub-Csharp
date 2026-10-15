@@ -6,9 +6,6 @@ namespace _21_Variability
 {
     internal class Wizard : Character
     {
-        public Wizard()
-        {
-            Console.WriteLine("* Тип персонажа: волшебник");
-        }
+        public override string Name => "Волшебник";
     }
 }
