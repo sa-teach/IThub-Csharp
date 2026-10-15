@@ -18,19 +18,19 @@ namespace _21_Variability
         static void Main(string[] args)
         {
 
-        // 3
+            // 3
             Func<Character> getWizard = () => new Wizard();
             Func<Character> getCharacter = getWizard;
 
-        // 4
-        Action<Character> handleCharacter = c => Console.WriteLine($"Обработан персонаж: {c.GetType().Name}");
+            // 4
+            Action<Character> handleCharacter = c => Console.WriteLine($"Обработан персонаж: {c.GetType().Name}");
             Action<Wizard> handleWizard = handleCharacter;
 
             while (true)
             {
                 Console.WriteLine();
                 Console.WriteLine("┌─ Выберите действие  ───────────────────────────────────────────────────────────────────────────────────────────────┐");
-                Console.WriteLine("|  1 - Создать волшебника через ковариантный делегат (TCharacter CharacterProducer<out TCharacter>())                |");                                  
+                Console.WriteLine("|  1 - Создать волшебника через ковариантный делегат (TCharacter CharacterProducer<out TCharacter>())                |");
                 Console.WriteLine("|  2 - Обработать персонажей через контравариантный делегат (CharacterConsumer<in TCharacter>(TCharacter character)) |");
                 Console.WriteLine("|  3 - Создать волшебника через Func<Character>                                                                      |");
                 Console.WriteLine("|  4 - Обработать персонажей через Action<Wizard>                                                                    |");
@@ -49,6 +49,9 @@ namespace _21_Variability
                     case "2":
                         CharacterConsumer<Wizard> consumer = HandleCharacter;
                         HandleCharacter(new Character());
+
+                        // consumer(new Character()); // тут ошибка компиляции
+
                         Console.WriteLine();
                         consumer(new Wizard());
                         Console.WriteLine();
@@ -59,7 +62,7 @@ namespace _21_Variability
                         Console.WriteLine();
                         break;
 
-                    case "4":                 
+                    case "4":
                         handleCharacter(getWizard());
                         Console.WriteLine();
                         handleCharacter(getCharacter());
