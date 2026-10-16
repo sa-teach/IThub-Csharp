@@ -17,3 +17,5 @@
 <img width="1824" height="854" alt="Снимок экрана 2026-10-15 в 20 07 59" src="https://github.com/user-attachments/assets/4471a382-9b4b-4dec-aa8c-0e7339428e3f" />
 
 <img width="1639" height="940" alt="Снимок экрана 2026-10-15 в 20 08 36" src="https://github.com/user-attachments/assets/a1ed6fd9-e623-4019-95e3-e37e4f054fbe" />
+
+<img width="1044" height="160" alt="Снимок экрана 2026-10-16 в 08 44 21" src="https://github.com/user-attachments/assets/f830dfeb-f9da-4d2b-8ff6-c4afa1b90b19" />
