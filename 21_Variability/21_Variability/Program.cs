@@ -19,7 +19,7 @@ namespace _21_Variability
         {
             // 3
             Func<Character> spawnWizardFunc = () => new Wizard();
-            Func<Character> getCharacterFunc = spawnWizardFunc;
+            Func<Character> spawnCharacterFunc = spawnWizardFunc;
 
             // 4
             Action<Character> damageCharacterAction = c => Console.WriteLine($"Нанесён урон персонажу {c.Name}");
@@ -49,24 +49,24 @@ namespace _21_Variability
 
                     case "2":
                         Console.WriteLine("Обрабатываем волшебника через CharacterConsumer<Wizard> = DamageCharacter(Character c)");
-                        CharacterConsumer<Wizard> consumer = DamageCharacter;
+                        CharacterConsumer<Wizard> c = DamageCharacter;
 
-                        // consumer(new Character()); // тут ошибка компиляции
+                        // c(new Character()); // тут ошибка компиляции
 
-                        consumer(spawnWizard());                   
+                        c(spawnWizard());                   
                         Console.WriteLine();
                         break;
 
                     case "3":                        
                         Console.WriteLine("Создаём волшебника через Func<Character> getCharacter = spawnWizard");
-                        Character c2 = getCharacterFunc();
+                        Character c2 = spawnCharacterFunc();
                         Console.WriteLine($"Тип созданного персонажа: {c2.Name}");
                         Console.WriteLine();
                         break;
 
                     case "4":                        
                         Console.WriteLine("Обрабатываем волшебника через Action<Wizard> handleWizard = damageCharacter");
-                        damageCharacterAction(getCharacterFunc());
+                        damageCharacterAction(spawnCharacterFunc());
                         Console.WriteLine();
                         break;
 
