@@ -42,11 +42,11 @@
                         break;
 
                     case "5":
-                        Console.WriteLine("Проверка на value is not null: " + r.TryGet(out string? r1));
+                        Console.WriteLine($"Проверка на value is not null: {r.TryGet(out string? r1)}; {r1} ");
                         break;
 
                     case "6":
-                        Console.WriteLine("Проверка на value is not null: " + v.TryGet(out double? v1));
+                        Console.WriteLine($"Проверка на value is not null: {v.TryGet(out double? v1)}; {v1}");
                         break;
 
                     default:
