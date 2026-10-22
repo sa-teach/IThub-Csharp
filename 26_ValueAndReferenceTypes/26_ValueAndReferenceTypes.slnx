@@ -1,3 +1,4 @@
 <Solution>
-  <Project Path="26_ValueAndReferenceTypes/26_ValueAndReferenceTypes.csproj" />
+  <Project Path="26_ValueAndReferenceTypes/2_ReferenceCache.csproj" />
+  <Project Path="ReferenceCache/1_ReferenceBox.csproj" Id="c400c2f2-e0a1-48ef-8b34-eb930f44bff8" />
 </Solution>

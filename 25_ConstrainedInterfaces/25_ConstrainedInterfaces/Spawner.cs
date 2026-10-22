@@ -13,6 +13,7 @@ namespace _25_ConstrainedInterfaces
                 T creature = new T();
                 Console.Write($"{i+1}-й ");
                 creature.Spawn();
+                creature.Attack();
             }
         }
     }

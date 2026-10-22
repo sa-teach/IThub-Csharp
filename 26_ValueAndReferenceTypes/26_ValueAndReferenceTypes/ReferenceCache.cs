@@ -8,7 +8,6 @@ namespace _26_ValueAndReferenceTypes
     {
         private T? value;
         public void Set(T item) => value = item;
-        public T? Get() => value;
         public bool TryGet(out T? v) => (v = value) is not null;
     }
 

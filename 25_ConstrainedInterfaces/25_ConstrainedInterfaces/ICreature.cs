@@ -4,5 +4,8 @@ using System.Text;
 
 namespace _25_ConstrainedInterfaces
 {
-    internal interface ICreature { void Spawn(); }
+    internal interface ICreature {
+        void Spawn();
+        void Attack();
+    }
 }

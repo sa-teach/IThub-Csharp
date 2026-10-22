@@ -8,6 +8,7 @@ namespace _25_ConstrainedInterfaces
     internal class Goblin : ICreature
     {
         public void Spawn() => Console.WriteLine("Гоблин заспавнился!");
+        public void Attack() => Console.WriteLine("Гоблин атакует игрока!");
         public Goblin() { }
     }
 }
