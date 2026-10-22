@@ -77,7 +77,6 @@ namespace _23_ConstrainedTypes
 
             Console.Write("Введите очки игрока: ");
             int points = Logic.SafeInputInt();
-            Console.WriteLine();
 
             return new Player(name, points);
         }
@@ -97,5 +96,14 @@ namespace _23_ConstrainedTypes
             return list;
         }
 
+        public static T FindBest<T>(List<T> items) where T : IComparable<T>
+        {
+            T max = items[0];
+            foreach (T item in items)
+            {
+                if (item.CompareTo(max) > 0) max = item;
+            }
+            return max;
+        }
     }
 }

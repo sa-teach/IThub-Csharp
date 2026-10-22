@@ -13,10 +13,10 @@
                 Console.WriteLine("┌─ Выберите действие  ──────────────────────────────────────────────┐");
                 Console.WriteLine("|  1 - посмотреть значение value переменной ReferenceCache<string>  |");
                 Console.WriteLine("|  2 - посмотреть значение value переменной ValueCache<double>      |");
-                Console.WriteLine("|  3 - задать значение value переменной ReferenceCache<double>      |");
+                Console.WriteLine("|  3 - задать значение value переменной ReferenceCache<string>      |");
                 Console.WriteLine("|  4 - задать значение value переменной ValueCache<double>          |");
-                Console.WriteLine("|  5 - проверить TryGetValue переменной ReferenceCache<string>      |");
-                Console.WriteLine("|  6 - проверить TryGetValue переменной ValueCache<double>          |");
+                Console.WriteLine("|  5 - проверить TryGet переменной ReferenceCache<string>           |");
+                Console.WriteLine("|  6 - проверить TryGet переменной ValueCache<double>               |");
                 Console.WriteLine("|  Чтобы выйти, введите любой другой символ                         |");
                 Console.WriteLine("└───────────────────────────────────────────────────────────────────┘");
                 Console.WriteLine();
@@ -42,11 +42,11 @@
                         break;
 
                     case "5":
-                        Console.WriteLine("Проверка на value is not null: " + r.TryGetValue(out string r1));
+                        Console.WriteLine("Проверка на value is not null: " + r.TryGet(out string? r1));
                         break;
 
                     case "6":
-                        Console.WriteLine("Проверка на value is not null: " + v.TryGetValue(out double? v1));
+                        Console.WriteLine("Проверка на value is not null: " + v.TryGet(out double? v1));
                         break;
 
                     default:
