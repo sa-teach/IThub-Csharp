@@ -7,6 +7,9 @@
             ReferenceCache<string> r = new ReferenceCache<string>();
             ValueCache<double> v = new ValueCache<double>();
 
+            new ReferenceCache<int>();
+            new ValueCache<string>();
+
             while (true)
             {
                 Console.WriteLine();
