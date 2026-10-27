@@ -15,7 +15,7 @@ namespace _27_HierarchyOfGenericClasses
                 Console.WriteLine();
                 Console.WriteLine("┌─ Выберите действие  ──────────────────────────────┐");
                 Console.WriteLine("|  1 - Добавить число в PositiveNumberRepository    |");
-                Console.WriteLine("|  2 - Добавить строку в LoggingRepository          |");
+                Console.WriteLine("|  2 - Добавить строку в LoggingStringRepository    |");
                 Console.WriteLine("|  3 - Добавить число в LoggingIntRepository        |");
                 Console.WriteLine("|  4 - Вывести содержимое LoggingStringRepository   |");
                 Console.WriteLine("|  5 - Вывести содержимое PositiveNumberRepository  |");
@@ -28,7 +28,7 @@ namespace _27_HierarchyOfGenericClasses
                 {
                     case "1":
                         Console.Write("Введите целое положительное число: ");
-                        positiveNumbersRepository.Add(Logic.SafeInputInt());
+                        Console.WriteLine(positiveNumbersRepository.Add(Convert.ToInt32(Console.ReadLine())));
                         break;
 
                     case "2":
@@ -37,8 +37,8 @@ namespace _27_HierarchyOfGenericClasses
                         break;
 
                     case "3":
-                        Console.Write("Введите целое положительное число: ");
-                        loggingIntRepository.Add(Logic.SafeInputInt());
+                        Console.Write("Введите целое число: ");
+                        Console.WriteLine(loggingIntRepository.Add(Convert.ToInt32(Console.ReadLine())));
                         break;
 
                     case "4":
@@ -61,3 +61,9 @@ namespace _27_HierarchyOfGenericClasses
         }
     }
 }
+
+//| Действие | Ожидаемый результат |
+//| PositiveNumberRepository.Add(5) | true, число добавлено |
+//| PositiveNumberRepository.Add(-3) | false, число не добавлено |
+//| LoggingRepository<int>.Add(10) | лог выведен, затем число добавлено |
+//| LoggingRepository<string>.Add("текст") | лог выведен, затем строка добавлена |

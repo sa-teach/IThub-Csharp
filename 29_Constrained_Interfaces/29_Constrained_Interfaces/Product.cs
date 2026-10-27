@@ -9,9 +9,10 @@ namespace _29_Constrained_Interfaces
         public int Id { get; }
         public string Name { get; }
         public double Price { get; }
-        public override string ToString() => $"{Name}, цена: {Price} у.е.";
-        public Product(string name, double price)
+        public override string ToString() => $"ID: {Id}, продукт: {Name}, цена: {Price} у.е.";
+        public Product(int id, string name, double price)
         {
+            Id = id;
             Name = name;
             Price = price;
         }
