@@ -34,13 +34,20 @@
                     case "3":
                         Console.Write("Введите id: ");
                         Product product = p.GetById(Logic.SafeInputInt());
-                        Console.WriteLine(product);
+                        Console.WriteLine(product == null ? "null" : product.ToString());
                         break;
 
                     case "4":
                         Console.Write("Введите id: ");
                         Customer customer = c.GetById(Logic.SafeInputInt());
-                        Console.WriteLine(customer);
+                        if (customer == null)
+                        {
+                            Console.WriteLine("null");
+                        }
+                        else
+                        {
+                            Console.WriteLine(customer);
+                        }
                         break;
 
                     case "5":
