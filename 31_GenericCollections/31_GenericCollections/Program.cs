@@ -25,12 +25,22 @@
             }
             void Delete()
             {
+                if (document.Count == 0)
+                {
+                    Console.WriteLine("Документ пуст!");
+                    return;
+                }
                 int index = document.Count - 1;
                 undoHistory.Push(document[index]);
                 document.RemoveAt(index);
             }
             void CancelDelete()
             {
+                if (undoHistory.Count == 0)
+                {
+                    Console.WriteLine("Ничего не удалялось, нечего восстановить");
+                    return;
+                }
                 document.Add(undoHistory.Pop());
             }
 
@@ -61,8 +71,10 @@
             Console.WriteLine("Вернули последнюю удаленную строку");
             foreach (string line in document) Console.Write(line + ' ');
             Console.WriteLine();
-            try{ Console.WriteLine(undoHistory.Peek()); }
-            catch { Console.WriteLine("Стек пуст!"); };
+            if (undoHistory.Count > 0)
+                Console.WriteLine(undoHistory.Peek());
+            else
+                Console.WriteLine("Стек пуст!");;
         }
     }
 }
